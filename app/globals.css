@@ -20,7 +20,9 @@
     background-color: #000 !important;
 }
 
-.css-1191obr-MuiPaper-root-MuiAppBar-root, .css-1r9jet7, .css-1l8j5k8 {
+
+
+.css-1191obr-MuiPaper-root-MuiAppBar-root, .css-1r9jet7, .css-1l8j5k8, .css-113qkos-MuiSwitch-root .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
     background-color: #000 !important;
 }
 
@@ -32,7 +34,7 @@
 
 /*  */
 
-.css-i4bv87-MuiSvgIcon-root {
+.css-i4bv87-MuiSvgIcon-root, .css-vubbuv {
     color: white;
 }
 

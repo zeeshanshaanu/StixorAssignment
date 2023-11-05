@@ -137,7 +137,7 @@ const style = {
   top: "60%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: 550,
   bgcolor: "background.paper",
   border: ".5px solid #000",
   borderRadius: 3,
@@ -433,7 +433,7 @@ const Events = () => {
                 }}
               >
                 <Card
-                  className="hover:bg-[#E5E5E5] transition-all"
+                  className="hover:bg-[#E5E5E5] transition-all border-[.5px] rounded-[8px]"
                   onClick={() => {
                     setEventDetail({
                       Title: event?.title,
@@ -461,7 +461,7 @@ const Events = () => {
                         Title:
                       </Typography>
                       <Tooltip placement="top" title={event?.title}>
-                        <Typography className="text-[#94A0B4] my-auto truncate">
+                        <Typography className="text-[#94A0B4] my-auto truncate w-[170px]">
                           {event?.title || "N/A"}
                         </Typography>
                       </Tooltip>
