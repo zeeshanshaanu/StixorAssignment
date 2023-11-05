@@ -1,14 +1,14 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import NoInternet from "@/src/components/connectivity/NoInternet ";
 import Events from "@/src/components/events/events";
 import Sidebar from "@/src/components/topBar-Comp/Sidebar";
 import { Box } from "@mui/material";
-import React, { useEffect, useState } from "react";
 
 const drawerWidth = 240;
 
-const page = () => {
+const Page = () => {
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
@@ -61,4 +61,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
