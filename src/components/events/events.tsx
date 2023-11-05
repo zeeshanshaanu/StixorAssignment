@@ -149,16 +149,6 @@ const style = {
 //////////////////////////  MAIN- EVENT FUNCTION START  ///////////////////////////
 //////////////////////////  MAIN- EVENT FUNCTION START  ///////////////////////////
 const Events = () => {
-  ////////////////////////// SCROLL ANIMATIONS  ///////////////////////////
-  ////////////////////////// SCROLL ANIMATIONS  ///////////////////////////
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["2 1", "0 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
   ////////////////////////// HOOKS FOR HANDLING   ///////////////////////////
   ////////////////////////// HOOKS FOR HANDLING   ///////////////////////////
   const [events, setEvents] = useState<Event[]>([]); // Specify the Event type
@@ -168,6 +158,17 @@ const Events = () => {
   const [SortData, setSortData] = useState<string | null>(null);
   const [ShowGridView, setShowGridView] = useState(false);
   const [openModel, setOpenModel] = useState(false);
+
+  ////////////////////////// SCROLL ANIMATIONS  ///////////////////////////
+  ////////////////////////// SCROLL ANIMATIONS  ///////////////////////////
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["2 1", "0 1"],
+    layoutEffect: false, // Use this option
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   ////////////////////////// FILTERS FUNCTIONALITY   ///////////////////////////
   ////////////////////////// FILTERS FUNCTIONALITY   ///////////////////////////
@@ -213,6 +214,10 @@ const Events = () => {
   ////////////////////////// FETCH-API CALLING USING PROMISES   ///////////////////////////
   ////////////////////////// FETCH-API CALLING USING PROMISES   ///////////////////////////
 
+  useEffect(() => {
+    fetchData();
+  }, [Categ, SortData]);
+
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -234,10 +239,6 @@ const Events = () => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [Categ, SortData]);
 
   if (loading) {
     return (
@@ -274,9 +275,10 @@ const Events = () => {
             >
               <Image
                 src="/Assets/Icons/FilterIcon.png"
-                alt=""
+                alt="Description"
                 width={45}
                 height={45}
+                layout="intrinsic"
               />
             </span>
           </Tooltip>
@@ -363,9 +365,10 @@ const Events = () => {
             >
               <Image
                 src="/Assets/Icons/SortIconBtn.png"
-                alt=""
-                width={120}
-                height={120}
+                alt="Description"
+                width={50}
+                height={50}
+                layout="intrinsic"
               />
             </span>
           </Tooltip>
