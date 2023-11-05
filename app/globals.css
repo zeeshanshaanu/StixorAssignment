@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.CenterDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0%;
+    padding: 0%;
+    transform: translate(-50%, -50%);
+}
+
+.css-1wvnaxz-MuiTableCell-root.MuiTableCell-head {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.css-19z1ozs-MuiPaper-root-MuiAppBar-root, .MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root {
+    background-color: #000 !important;
+}
+
+.css-1191obr-MuiPaper-root-MuiAppBar-root {
+    background-color: #000 !important;
+}
+
+.css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
+    color: #fff !important;
+    background: black;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    color: white;
+}
+
+.css-113qkos-MuiSwitch-root .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+    background-color: #000 !important;
+
+}
