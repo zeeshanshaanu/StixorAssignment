@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef, Fragment } from "react";
 import GoogleMapReact from "google-map-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 
 import axios from "axios";
 import {
@@ -273,13 +272,7 @@ const Events = () => {
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
             >
-              <Image
-                src="/Assets/Icons/FilterIcon.png"
-                alt="Description"
-                width={45}
-                height={45}
-                layout="intrinsic"
-              />
+              <img src="/Assets/Icons/FilterIcon.png" alt="Description" />
             </span>
           </Tooltip>
 
@@ -363,13 +356,7 @@ const Events = () => {
               aria-expanded={open2 ? "true" : undefined}
               onClick={handleClick2}
             >
-              <Image
-                src="/Assets/Icons/SortIconBtn.png"
-                alt="Description"
-                width={50}
-                height={50}
-                layout="intrinsic"
-              />
+              <img src="/Assets/Icons/SortIconBtn.png" alt="Description" />
             </span>
           </Tooltip>
 

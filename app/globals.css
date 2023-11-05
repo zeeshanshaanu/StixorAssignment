@@ -11,7 +11,7 @@
     transform: translate(-50%, -50%);
 }
 
-.css-1wvnaxz-MuiTableCell-root.MuiTableCell-head {
+.css-1wvnaxz-MuiTableCell-root.MuiTableCell-head, .css-2dum1v-MuiDrawer-docked, .MuiDrawer-paper {
     background-color: #000 !important;
     color: #fff !important;
 }
@@ -20,20 +20,26 @@
     background-color: #000 !important;
 }
 
-.css-1191obr-MuiPaper-root-MuiAppBar-root {
+.css-1191obr-MuiPaper-root-MuiAppBar-root, .css-1r9jet7, .css-1l8j5k8 {
     background-color: #000 !important;
 }
 
-.css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
+/*  */
+.css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper, .css-1l8j5k8 {
     color: #fff !important;
     background: black;
 }
+
+/*  */
 
 .css-i4bv87-MuiSvgIcon-root {
     color: white;
 }
 
-.css-113qkos-MuiSwitch-root .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+/* .css-113qkos-MuiSwitch-root .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
     background-color: #000 !important;
+} */
 
+.css-i6s8oy {
+    background-color: #000 !important;
 }
