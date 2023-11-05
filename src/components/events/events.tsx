@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, Fragment } from "react";
 import GoogleMapReact from "google-map-react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 import axios from "axios";
 import {
@@ -213,7 +214,6 @@ const Events = () => {
   ////////////////////////// FETCH-API CALLING USING PROMISES   ///////////////////////////
 
   const fetchData = async () => {
-    console.log("Ftn is calling");
     setLoading(true);
     try {
       const response = await axios.get(API_BASE_URL, {
@@ -272,7 +272,12 @@ const Events = () => {
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
             >
-              <img src="/Assets/Icons/FilterIcon.png" alt="" />
+              <Image
+                src="/Assets/Icons/FilterIcon.png"
+                alt=""
+                width={45}
+                height={45}
+              />
             </span>
           </Tooltip>
 
@@ -356,7 +361,12 @@ const Events = () => {
               aria-expanded={open2 ? "true" : undefined}
               onClick={handleClick2}
             >
-              <img src="/Assets/Icons/SortIconBtn.png" alt="" />
+              <Image
+                src="/Assets/Icons/SortIconBtn.png"
+                alt=""
+                width={120}
+                height={120}
+              />
             </span>
           </Tooltip>
 
@@ -423,9 +433,9 @@ const Events = () => {
           {/* ////////////////////////// GRID VIEW UI  /////////////////////////// */}
           {/* ////////////////////////// GRID VIEW UI  /////////////////////////// */}
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-5 cursor-pointer">
-            {events?.map((event) => (
+            {events?.map((event, id) => (
               <motion.div
-                key={event.id}
+                key={id}
                 ref={ref}
                 style={{
                   scale: scaleProgess,
@@ -566,9 +576,9 @@ const Events = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {events?.map((row) => (
+                  {events?.map((row, id) => (
                     <StyledTableRow
-                      key={row.id}
+                      key={id}
                       className="cursor-pointer hover:bg-[#E5E5E5] transition-all"
                       onClick={() => {
                         setEventDetail({
