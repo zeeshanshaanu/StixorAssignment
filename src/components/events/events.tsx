@@ -1,8 +1,8 @@
 "use client";
-
 import { useState, useEffect, useRef, Fragment } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import GoogleMapReact from "google-map-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 import axios from "axios";
 import {
   Card,
@@ -425,6 +425,7 @@ const Events = () => {
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-5 cursor-pointer">
             {events?.map((event) => (
               <motion.div
+                key={event.id}
                 ref={ref}
                 style={{
                   scale: scaleProgess,
@@ -567,6 +568,7 @@ const Events = () => {
                 <TableBody>
                   {events?.map((row) => (
                     <StyledTableRow
+                      key={row.id}
                       className="cursor-pointer hover:bg-[#E5E5E5] transition-all"
                       onClick={() => {
                         setEventDetail({
